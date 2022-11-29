@@ -22,3 +22,7 @@ export enum FileType {
 }
 
 
+export enum ViewMode {
+    LIST,
+    GRID
+}

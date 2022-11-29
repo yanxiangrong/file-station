@@ -7,6 +7,7 @@ import {FileItem} from "./FileItem";
 import {IFileInfo} from "../models";
 import {fetchData} from "../api";
 import {LoadingContext} from "../context";
+import {sortByIsDir} from "../utils";
 
 
 interface IState {
@@ -43,14 +44,8 @@ class ListView extends React.Component<IProps, IState> {
 
   updateFiles = () => {
     fetchData(this.props.directories.join('/')).then((serverFiles: IFileInfo[]) => {
-      serverFiles.sort((a, b) => {
-        if (a.isDir && !b.isDir) return -1;
-        if (a.isDir && b.isDir) return 0;
-        if (!a.isDir && !b.isDir) return 0;
-        if (!a.isDir && b.isDir) return 1;
-        return 0;
-      })
-      this.setState({files: serverFiles})
+        sortByIsDir(serverFiles)
+        this.setState({files: serverFiles})
       this.context?.setLoading(false)
     })
   }
@@ -98,14 +93,14 @@ class ListView extends React.Component<IProps, IState> {
 
 
     return (
-      <Container maxWidth="md">
-        <Directories directories={directories}/>
-        <List dense={true}>
-          {infoItems}
-        </List>
+        <Container sx={{mt: 1}} maxWidth="md">
+            <Directories directories={directories}/>
+            <List dense={true}>
+                {infoItems}
+            </List>
 
-        <FileContextMenu contextMenu={contextMenu}/>
-      </Container>
+            <FileContextMenu contextMenu={contextMenu}/>
+        </Container>
     );
   }
 }

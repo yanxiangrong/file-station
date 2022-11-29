@@ -1,42 +1,16 @@
 import Link from "next/link";
 import style from "../../styles/Home.module.scss";
-import {ListItemButton, ListItem, ListItemIcon} from "@mui/material";
-import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
-import ListItemText from "@mui/material/ListItemText";
-import {numberToFileSize, timeConverter} from "../utils";
+import {ListItem, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
+import {fileIcon, numberToFileSize, timeConverter} from "../utils";
 import React, {MouseEventHandler} from "react";
-import {FileType, IFileInfo} from "../models";
-import TextSnippetIcon from '@mui/icons-material/TextSnippet';
-import FolderIcon from '@mui/icons-material/Folder';
-import AudioFileIcon from '@mui/icons-material/AudioFile';
-import ImageIcon from '@mui/icons-material/Image';
-import VideoFileIcon from '@mui/icons-material/VideoFile';
+import {IFileInfo} from "../models";
 
 
 interface IProps {
-  fileInfo: IFileInfo
-  url: string
-  onClick?: MouseEventHandler | undefined;
-  onContextMenu?: MouseEventHandler | undefined;
-}
-
-function fileIcon(t: FileType) {
-  switch (t) {
-    case FileType.FOLDER:
-      return <FolderIcon/>
-    case FileType.UNKNOWN:
-      return <InsertDriveFileIcon/>
-    case FileType.TEXT:
-      return <TextSnippetIcon/>
-    case FileType.IMAGE:
-      return <ImageIcon/>
-    case FileType.VIDEO:
-      return <VideoFileIcon/>
-    case FileType.AUDIO:
-      return <AudioFileIcon/>
-    default:
-      return <InsertDriveFileIcon/>
-  }
+    fileInfo: IFileInfo
+    url: string
+    onClick?: MouseEventHandler | undefined;
+    onContextMenu?: MouseEventHandler | undefined;
 }
 
 export function FileItem(props: IProps) {

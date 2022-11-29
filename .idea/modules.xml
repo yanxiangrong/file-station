@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/file_station.iml" filepath="$PROJECT_DIR$/.idea/file_station.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pcb_tools/.idea/pcb_tools.iml" filepath="$PROJECT_DIR$/../pcb_tools/.idea/pcb_tools.iml" />
     </modules>
   </component>
 </project>
