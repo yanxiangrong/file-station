@@ -41,19 +41,19 @@ export function fileIcon(t: FileType, sx?: SxProps) {
     if (sx) {
         switch (t) {
             case FileType.FOLDER:
-                return <FolderIcon sx={sx}/>
+                return <FolderIcon color={"action"} sx={sx}/>
             case FileType.UNKNOWN:
-                return <InsertDriveFileIcon sx={sx}/>
+                return <InsertDriveFileIcon color={"action"} sx={sx}/>
             case FileType.TEXT:
-                return <TextSnippetIcon sx={sx}/>
+                return <TextSnippetIcon color={"action"} sx={sx}/>
             case FileType.IMAGE:
-                return <ImageIcon sx={sx}/>
+                return <ImageIcon color={"action"} sx={sx}/>
             case FileType.VIDEO:
-                return <VideoFileIcon sx={sx}/>
+                return <VideoFileIcon color={"action"} sx={sx}/>
             case FileType.AUDIO:
-                return <AudioFileIcon sx={sx}/>
+                return <AudioFileIcon color={"action"} sx={sx}/>
             default:
-                return <InsertDriveFileIcon sx={sx}/>
+                return <InsertDriveFileIcon color={"action"} sx={sx}/>
         }
     }
     switch (t) {

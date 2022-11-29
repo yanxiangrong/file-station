@@ -62,13 +62,7 @@ class Home extends React.Component<IProps, IState> {
         return (
             <>
                 <Box sx={{height: 8}}>
-                    <Fade
-                        in={loading}
-                        style={{
-                            transitionDelay: loading ? '800ms' : '0ms',
-                        }}
-                        unmountOnExit
-                    >
+                    <Fade in={loading} style={{transitionDelay: loading ? '800ms' : '0ms',}} unmountOnExit>
                         <LinearProgress/>
                     </Fade>
                 </Box>

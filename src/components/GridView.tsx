@@ -114,7 +114,6 @@ class GridView extends React.Component<IProps, IState> {
 
             return (
                 <Grid key={key++} item>
-
                     {
                         file.isDir ?
                             <Link href={url} className={style.fileItem}>
